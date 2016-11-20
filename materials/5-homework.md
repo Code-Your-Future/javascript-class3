@@ -1,7 +1,7 @@
 JS III Homework Assignment
 
 1) Make a game
-	- a game of your choosing, or one we suggest the memory game, tic tac toe (or bowling - https://github.com/getify/You-Dont-Know-JS).
+	- a game of your choosing, or one we suggest the memory game, tic tac toe (or bowling - ).
 	- follow the airbnb style guide!
 
 3) Codewars
