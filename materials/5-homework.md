@@ -1,9 +1,8 @@
 JS III Homework Assignment
 
 1) Make a game
-	- a game of your choosing, or one we suggest
-	- https://github.com/HackYourFuture/JavaScript/tree/master/Week3
-	- follow the airbnb style guide
+	- a game of your choosing, or one we suggest the memory game, tic tac toe (or bowling).
+	- follow the airbnb style guide!
 
 3) Codewars
 	- 8 and 7 kyu JS exercises on https://www.codewars.com/
