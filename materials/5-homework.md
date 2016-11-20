@@ -8,7 +8,7 @@ JS III Homework Assignment
 	- 8 and 7 kyu JS exercises on https://www.codewars.com/
 
 4) Read / watch the following, and discuss with the class.
-	- Eloquent JS chapters
+	- You odn't know JS chapters
 
 2) Review each other's homework
 	- ensure that the rules in airbnb style guide are upheld
