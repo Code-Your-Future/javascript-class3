@@ -16,11 +16,11 @@ theo.siblingCount = 8;
 theo.favouriteFilm = 'The Godfather Part I';
 
 for (var property in theo) {
-	console.log(property + " = " + theo[property])
+	console.log(property + " is " + theo[property])
 }
 => 'firstname is Theo'
 => 'surname is Leanse'
-=> 'age is 29'
+=> 'age is 28'
 => 'siblingCount is 8'
 => 'favouriteFilm is The Godfather Part I'
 
@@ -29,9 +29,9 @@ delete theo.firstname;
 delete theo.surname;
 
 for (var property in theo) {
-	console.log(property + " = " + theo[property])
+	console.log(property + " is " + theo[property])
 }
-=> 'age is 29'
+=> 'age is 28'
 => 'siblingCount is 8'
 => 'favouriteFilm is The Godfather part I'
 => 'fullname is Theo Leanse'
