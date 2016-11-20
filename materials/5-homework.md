@@ -5,10 +5,10 @@ JS III Homework Assignment
 	- follow the airbnb style guide!
 
 3) Codewars
-	- 8 and 7 kyu JS exercises on https://www.codewars.com/
+	- 30 points (8 and 7 kyu JS exercises) on https://www.codewars.com/
 
 4) Read / watch the following, and discuss with the class.
-	- You odn't know JS chapters
+	- You don't know JS chapters
 
 2) Review each other's homework
 	- ensure that the rules in airbnb style guide are upheld
