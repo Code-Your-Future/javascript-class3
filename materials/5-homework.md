@@ -4,9 +4,9 @@
 	* Build a UI-based game using HTML/CSS with JavaScript for DOM Manipulation and Event Handling. We suggest Noughts and Crosses / Tic Tac Toe, but other options could be the memory game or the bowling score card.
 	* We learned about how to create, assign values to, and iterate over Arrays and Objects - this might be useful.
 		- refer to the class materials for starters.
-	  - Try not to use `document.write` anymore - instead try `document.querySelector` and `document.querySelectorAll` to select DOM elements and manipulate them with JS.
+	* Try not to use `document.write` anymore - instead try `document.querySelector` and `document.querySelectorAll` to select DOM elements and manipulate them with JS.
 		- this is a nice summary of useful DOM manipulation methods: http://callmenick.com/post/basics-javascript-dom-manipulation.
-	  - we didn't cover event listeners, so you will need to research `document.addEventListener` on your own this week in order to handle a user's interaction with your game.
+	* we didn't cover event listeners, so you will need to research `document.addEventListener` on your own this week in order to handle a user's interaction with your game.
 		- In your browser, try running the event listener materials from the class https://github.com/Code-Your-Future/javascript-class3/blob/master/materials/4-dom-events.md
 		- MDN documentation for docuement.addEventListener: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 	- Rules for Noughts and Crosses
