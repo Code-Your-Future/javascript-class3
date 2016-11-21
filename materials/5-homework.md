@@ -6,9 +6,9 @@
 		- refer to the class materials for starters.
 	* Try not to use `document.write` anymore - instead try `document.querySelector` and `document.querySelectorAll` to select DOM elements and manipulate them with JS.
 		- this is a nice summary of useful DOM manipulation methods: http://callmenick.com/post/basics-javascript-dom-manipulation.
-	* we didn't cover event listeners, so you will need to research `document.addEventListener` on your own this week in order to handle a user's interaction with your game.
+	* we didn't cover event listeners, so you will need to research the `.addEventListener` method on your own this week in order to handle a user's interaction with your game.
 		- In your browser, try running the event listener materials from the class https://github.com/Code-Your-Future/javascript-class3/blob/master/materials/4-dom-events.md
-		- MDN documentation for docuement.addEventListener: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+		- MDN documentation for `.addEventListener`: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 	- Rules for Noughts and Crosses
 	  - https://en.wikipedia.org/wiki/Tic-tac-toe
 	  - example: http://mediaupstream.com/sandbox/tic-tac-toe/
