@@ -4,13 +4,18 @@ body {
 h1 {
   text-align: center;
 }
+.score {
+  width:20px;
+  margin: 0 auto;
+  font-size: 20px;
+}
 table {
   margin:50px auto;
   /*background-color: red;*/
 }
 #message {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 10px;
 }
   td {
     width:100px;

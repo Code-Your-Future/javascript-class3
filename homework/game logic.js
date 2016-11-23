@@ -1,4 +1,12 @@
-
+var xScore = 10;
+var oScore = 10;
+function reset () {
+  var blocks = document.getElementsByTagName('td').length;
+  for (var i = 1; i <= blocks; i++) {
+    document.getElementById("block" + i).innerText = "";
+  }
+  game();
+}
 // start game with onload() event in the html file
 function game() {
   document.turn = 'X';
@@ -35,6 +43,7 @@ function switchTurns () {
     to stop overriding the rest of empty blocks in the game
     (check function playBtn()) */
     document.win = document.turn;
+    getScore(document.turn);
   }else if (document.turn === "X") {
     document.turn = "O";
     displayMessage("It's " + document.turn + "'s turn");
@@ -69,4 +78,15 @@ function checkLine (a, b, c, turn){
 function getBlock (blockNumber) {
   // returning the X or O inside <td> tag by its number :)
   return document.getElementById("block" + blockNumber).innerText;
+}
+
+function getScore(turn) {
+  if (turn === "X") {
+    document.getElementById(turn +"Score").innerText = turn + ":" + xScore.toString();
+    xScore += 10;
+  }else {
+    document.getElementById(turn +"Score").innerText = turn + ":" + oScore.toString();
+    oScore += 10;
+  }
+
 }
