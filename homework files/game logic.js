@@ -1,4 +1,8 @@
 var player;
+var xScore = 10;
+var oScore = 10;
+
+
 function players () {
    player = prompt("how many player do you want 1 or 2");
    if (player === "1") {
@@ -14,8 +18,7 @@ function players () {
         playBtn();  */
    }
 }
-var xScore = 10;
-var oScore = 10;
+
 function reset () {
   var blocks = document.getElementsByTagName('td').length;
   for (var i = 1; i <= blocks; i++) {
@@ -23,6 +26,7 @@ function reset () {
   }
   players();
 }
+
 // start game with onload() event in the html file
 function game() {
   document.turn = prompt("choose X or O for your enemy").toUpperCase();
@@ -52,6 +56,7 @@ function playBtn (square) {
     displayMessage("This place is already occuoied, please try another block");
   }
 }
+
 // if X done switch to O
 function switchTurns () {
   // if check winner is true
@@ -81,6 +86,7 @@ function checkWinner (turn) {
   }
   return result;
 }
+
 // check for the rows
 function checkLine (a, b, c, turn){
   var outCome = false;
@@ -92,6 +98,11 @@ function checkLine (a, b, c, turn){
   }
   return outCome;
 }
+
+function setBlock (blockNumber) {
+  document.getElementById("block" + blockNumber).innerText = document.turn;
+}
+
 // get block posiiton from html file
 function getBlock (blockNumber) {
   // returning the X or O inside <td> tag by its number :)
@@ -106,14 +117,60 @@ function getScore(turn) {
     document.getElementById(turn +"Score").innerText = turn + ":" + oScore.toString();
     oScore += 10;
   }
-
 }
+
 function computerChoice(userChoice) {
   // this while is missing possibility in the argument which is all blocks are full
     while (document.win === null) {
       var turn = Math.floor(Math.random() * 9) + 1;
-      if (document.getElementById("block" + turn).innerText === ""){
-        document.getElementById("block" + turn).innerText = document.turn;
+      var bestChoice ;
+      if (getBlock(turn) === ""){
+          if (getBlock(2) === document.turn && getBlock(3) === document.turn ||
+              getBlock(4) === document.turn && getBlock(7) === document.turn ||
+              getBlock(5) === document.turn && getBlock(9) === document.turn){
+             bestChoice = 1;
+             if(getBlock(1) === ""){setBlock(1);}
+        } else if(getBlock(1) === document.turn && getBlock(3) === document.turn ||
+                  getBlock(5) === document.turn && getBlock(8) === document.turn){
+           bestChoice = 2;
+           if(getBlock(2) === ""){setBlock(2);}
+        } else if(getBlock(1) === document.turn && getBlock(2) === document.turn ||
+                  getBlock(6) === document.turn && getBlock(9) === document.turn ||
+                  getBlock(5) === document.turn && getBlock(7) === document.turn){
+            bestChoice = 3;
+            if(getBlock(3) === ""){setBlock(3);}
+        } else if(getBlock(5) === document.turn && getBlock(6) === document.turn ||
+                  getBlock(1) === document.turn && getBlock(7) === document.turn){
+           bestChoice = 4;
+           if(getBlock(4) === ""){setBlock(4);}
+         }else if(getBlock(4) === document.turn && getBlock(6) === document.turn ||
+                  getBlock(2) === document.turn && getBlock(8) === document.turn ||
+                  getBlock(1) === document.turn && getBlock(9) === document.turn ||
+                  getBlock(3) === document.turn && getBlock(7) === document.turn){
+               bestChoice = 5;
+               if(getBlock(5) === ""){setBlock(5);}
+         } else if(getBlock(3) === document.turn && getBlock(9) === document.turn ||
+                   getBlock(4) === document.turn && getBlock(5) === document.turn){
+             bestChoice = 6;
+             if(getBlock(6) === ""){setBlock(6);}
+         } else if(getBlock(1) === document.turn && getBlock(4) === document.turn ||
+                   getBlock(8) === document.turn && getBlock(9) === document.turn ||
+                   getBlock(5) === document.turn && getBlock(3) === document.turn){
+             bestChoice = 7;
+             if(getBlock(7) === ""){setBlock(7);}
+         } else if(getBlock(2) === document.turn && getBlock(5) === document.turn ||
+                   getBlock(7) === document.turn && getBlock(9) === document.turn){
+             bestChoice = 8;
+             if(getBlock(8) === ""){setBlock(8);}
+         } else if(getBlock(7) === document.turn && getBlock(8) === document.turn ||
+                   getBlock(1) === document.turn && getBlock(5) === document.turn ||
+                   getBlock(3) === document.turn && getBlock(6) === document.turn){
+             bestChoice = 9;
+             if(getBlock(9) === ""){setBlock(9);}
+         } else {
+           setBlock(turn);
+         }
+
         switchTurns();
         // I donn't know how it worked but it works ----------------------------------------------------------------
         // I tried different parameter for playBtn() and I'm not sure how it's working right now
