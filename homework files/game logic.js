@@ -1,3 +1,19 @@
+var player;
+function players () {
+   player = prompt("how many player do you want 1 or 2");
+   if (player === "1") {
+    //  window.alert("this one is not done yet");
+    //  players();
+    computerChoice(game());
+   }else if (player === "2") {
+     game();
+   } else {
+     console.error("wrong input");
+     displayMessage(" wrong input restat the game please");
+    /*  i need to disable this function
+        playBtn();  */
+   }
+}
 var xScore = 10;
 var oScore = 10;
 function reset () {
@@ -5,18 +21,19 @@ function reset () {
   for (var i = 1; i <= blocks; i++) {
     document.getElementById("block" + i).innerText = "";
   }
-  game();
+  players();
 }
 // start game with onload() event in the html file
 function game() {
-  document.turn = 'X';
-  document.win = null;              // check for winning to stop the game
-  var turns = Math.random();              // giving the program a random choice for the turn
-  if (turns < 0.5) {
-    document.turn = "O"
+  document.turn = prompt("choose X or O for your enemy").toUpperCase();
+  if (document.turn !== "X" && document.turn !== "O") {
+    game();
   }
+  document.win = null;              // check for winning to stop the game
   displayMessage(document.turn + " should start");
+
 }
+
 // this is for demonstration purpose
 function displayMessage(message) {
   document.getElementById('message').innerText = message;
@@ -30,6 +47,7 @@ function playBtn (square) {
   }else if(square.innerText === ""){
     square.innerText = document.turn;
     switchTurns();
+    if (player === "1"){computerChoice();}
   } else {
     displayMessage("This place is already occuoied, please try another block");
   }
@@ -89,4 +107,17 @@ function getScore(turn) {
     oScore += 10;
   }
 
+}
+function computerChoice(userChoice) {
+  // this while is missing possibility in the argument which is all blocks are full
+    while (document.win === null) {
+      var turn = Math.floor(Math.random() * 9) + 1;
+      if (document.getElementById("block" + turn).innerText === ""){
+        document.getElementById("block" + turn).innerText = document.turn;
+        switchTurns();
+        // I donn't know how it worked but it works ----------------------------------------------------------------
+        // I tried different parameter for playBtn() and I'm not sure how it's working right now
+        playBtn ();
+      }
+    }
 }
