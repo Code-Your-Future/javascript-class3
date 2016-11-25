@@ -123,58 +123,40 @@ function computerChoice(userChoice) {
   // this while is missing possibility in the argument which is all blocks are full
     while (document.win === null) {
       var turn = Math.floor(Math.random() * 9) + 1;
-      var bestChoice ;
+
       if (getBlock(turn) === ""){
-          if (getBlock(2) === document.turn && getBlock(3) === document.turn ||
-              getBlock(4) === document.turn && getBlock(7) === document.turn ||
-              getBlock(5) === document.turn && getBlock(9) === document.turn){
-             bestChoice = 1;
+          if (aI(1,3) || aI(4,7) || aI(5,9)){
              if(getBlock(1) === ""){setBlock(1);}else{ setBlock(turn);}
-        } else if(getBlock(1) === document.turn && getBlock(3) === document.turn ||
-                  getBlock(5) === document.turn && getBlock(8) === document.turn){
-           bestChoice = 2;
+        } else if(aI(1,3) || aI(5,8)){
            if(getBlock(2) === ""){setBlock(2);}else{ setBlock(turn);}
-        } else if(getBlock(1) === document.turn && getBlock(2) === document.turn ||
-                  getBlock(6) === document.turn && getBlock(9) === document.turn ||
-                  getBlock(5) === document.turn && getBlock(7) === document.turn){
-            bestChoice = 3;
+        } else if(aI(1,2) || aI(6,9) || aI(5,7)){
             if(getBlock(3) === ""){setBlock(3);}else{ setBlock(turn);}
-        } else if(getBlock(5) === document.turn && getBlock(6) === document.turn ||
-                  getBlock(1) === document.turn && getBlock(7) === document.turn){
-           bestChoice = 4;
-           if(getBlock(4) === ""){setBlock(4);}else{ setBlock(turn);}
-         }else if(getBlock(4) === document.turn && getBlock(6) === document.turn ||
-                  getBlock(2) === document.turn && getBlock(8) === document.turn ||
-                  getBlock(1) === document.turn && getBlock(9) === document.turn ||
-                  getBlock(3) === document.turn && getBlock(7) === document.turn){
-               bestChoice = 5;
-               if(getBlock(5) === ""){setBlock(5);}else{ setBlock(turn);}
-         } else if(getBlock(3) === document.turn && getBlock(9) === document.turn ||
-                   getBlock(4) === document.turn && getBlock(5) === document.turn){
-             bestChoice = 6;
-             if(getBlock(6) === ""){setBlock(6);}else{ setBlock(turn);}
-         } else if(getBlock(1) === document.turn && getBlock(4) === document.turn ||
-                   getBlock(8) === document.turn && getBlock(9) === document.turn ||
-                   getBlock(5) === document.turn && getBlock(3) === document.turn){
-             bestChoice = 7;
-             if(getBlock(7) === ""){setBlock(7);}else{ setBlock(turn);}
-         } else if(getBlock(2) === document.turn && getBlock(5) === document.turn ||
-                   getBlock(7) === document.turn && getBlock(9) === document.turn){
-             bestChoice = 8;
-             if(getBlock(8) === ""){setBlock(8);}else{ setBlock(turn);}
-         } else if(getBlock(7) === document.turn && getBlock(8) === document.turn ||
-                   getBlock(1) === document.turn && getBlock(5) === document.turn ||
-                   getBlock(3) === document.turn && getBlock(6) === document.turn){
-             bestChoice = 9;
-             if(getBlock(9) === ""){setBlock(9);}else{ setBlock(turn);}
+        } else if(aI(5,6) || aI(1,7)){
+            if(getBlock(4) === ""){setBlock(4);}else{ setBlock(turn);}
+         }else if(aI(4,6) || aI(2,8) || aI(1,9) || aI (3,7)){
+            if(getBlock(5) === ""){setBlock(5);}else{ setBlock(turn);}
+         } else if(aI(3,9) || aI(4,5)){
+            if(getBlock(6) === ""){setBlock(6);}else{setBlock(turn);}
+         } else if(aI(1,4) || aI(8,9) || aI(5,3)){
+            if(getBlock(7) === ""){setBlock(7);}else{setBlock(turn);}
+         } else if(aI(2,5) || aI(7,9)){
+             if(getBlock(8) === ""){setBlock(8);}else{setBlock(turn);}
+         } else if(aI(7,8) || aI(1,5) || aI(3,6)){
+             if(getBlock(9) === ""){setBlock(9);}else{setBlock(turn);}
          } else {
            setBlock(turn);
          }
-
         switchTurns();
         // I donn't know how it worked but it works ----------------------------------------------------------------
         // I tried different parameter for playBtn() and I'm not sure how it's working right now
         playBtn ();
       }
     }
+}
+
+function aI (block1, block2) {
+  if(getBlock(block1) === document.turn && getBlock(block2) === document.turn) {
+    return true
+  }
+  return false;
 }
