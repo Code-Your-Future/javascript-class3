@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <script src="game logic.js" type="text/javascript"></script>
+
+  </head>
+  <body onload="players()">
+    <h1>this is my game</h1>
+    <div class="score">score:
+      <div id="XScore">X</div>
+      <div id="OScore">O</div>
+    </div>
+    <div id="message"></div>
+    <table border = "2">
+      <tr>
+        <!-- this is indicate to the <td> tag that we selected when click it -->
+        <td id="block1" class="square" onclick="playBtn(this)"></td>
+        <td id="block2" class="square" onclick="playBtn(this)"></td>
+        <td id="block3" class="square" onclick="playBtn(this)"></td>
+      </tr>
+      <tr>
+        <td id="block4" class="square" onclick="playBtn(this)"></td>
+        <td id="block5" class="square" onclick="playBtn(this)"></td>
+        <td id="block6" class="square" onclick="playBtn(this)"></td>
+      </tr>
+      <tr>
+        <td id="block7" class="square" onclick="playBtn(this)"></td>
+        <td id="block8" class="square" onclick="playBtn(this)"></td>
+        <td id="block9" class="square" onclick="playBtn(this)"></td>
+      </tr>
+    </table>
+    <a href="javascript:reset()"> restat the game</a>
+  </body>
+</html>
