@@ -1,6 +1,6 @@
 /**
     *   Tic tac toe game code fragment, 
-    *   written by Sentayhu, 2016
+    *   Date , 2016
 */
 var flag=false;
 /**
