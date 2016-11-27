@@ -1,0 +1,33 @@
+html{
+	background-image: url("http://pre14.deviantart.net/f203/th/pre/f/2010/032/e/8/bamboo_lights_up_by_geolehman.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+body{
+	text-align:center;
+}
+.divheader{
+	height: 60px;
+}
+#box{
+	text-align:center;
+	width:auto;
+	height:auto;
+}
+
+h1{
+	color:white;
+}
+
+canvas{
+	position:relative;
+	background-color: white;
+	cursor: pointer;
+}
+input{
+	font-size: 16px;
+	margin-top: 20px;
+	padding:10px; 
+	font-weight: bold;
+	cursor: pointer;
+}
