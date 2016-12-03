@@ -1,4 +1,5 @@
 //Memory Game
+// variables
 var startPlayButton = false;
 var firstImage;
 var secondImage;
